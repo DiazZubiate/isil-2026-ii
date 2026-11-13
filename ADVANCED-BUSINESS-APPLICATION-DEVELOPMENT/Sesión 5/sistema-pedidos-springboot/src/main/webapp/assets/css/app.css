@@ -30,3 +30,26 @@ code { font-family: Consolas, monospace; }
     .flujo { margin-top: 16px; white-space: normal; }
     .form-grid { grid-template-columns: 1fr; }
 }
+
+/* PA3 - módulo de reportes */
+.acciones-cabecera { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.acciones-cabecera form { margin: 0; }
+.boton-secundario { min-height: 42px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 7px; border: 1px solid #202124; text-decoration: none; color: #202124; font-weight: 700; background: #fff; }
+.resumen-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+.resumen-grid .tarjeta { margin-bottom: 0; }
+.indicador { display: grid; gap: 8px; }
+.indicador span { color: #667085; font-size: .9rem; }
+.indicador strong { font-size: 1.45rem; }
+.ayuda { color: #667085; margin-top: -8px; }
+.reporte-form { grid-template-columns: 2fr 1fr auto; }
+.reporte-form.compacto { grid-template-columns: 1fr auto; max-width: 460px; }
+.espacio-superior { margin-top: 20px; }
+.rutas { margin-bottom: 0; }
+.rutas li { margin: 8px 0; }
+@media (max-width: 900px) {
+    .resumen-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .reporte-form, .reporte-form.compacto { grid-template-columns: 1fr; max-width: none; }
+}
+@media (max-width: 540px) {
+    .resumen-grid { grid-template-columns: 1fr; }
+}

@@ -22,9 +22,18 @@ public class SecurityConfig {
     return httpSecurity.authorizeHttpRequests(auth -> auth
             .requestMatchers("/assets/**").permitAll()
             .requestMatchers("/h2-console/**").denyAll()
-            .requestMatchers(HttpMethod.POST, "/pedidos")
-              .hasAnyRole("OPERADOR")
-            .requestMatchers(HttpMethod.GET, "/api/v1/pedidos", "/api/v1/pedidos/**")
+            .requestMatchers(HttpMethod.POST, "/pedidos").hasRole("OPERADOR")
+            // PA3: acceso explícito a la vista y endpoints del módulo de reportes.
+            .requestMatchers(HttpMethod.GET, "/reportes/**")
+            .hasAnyRole("OPERADOR", "CONSULTA")
+            .requestMatchers(
+                HttpMethod.GET,
+                "/api/v1/pedidos/busqueda-avanzada",
+                "/api/v1/pedidos/clientes-frecuentes",
+                "/api/v1/pedidos/estadisticas/**",
+                "/api/v1/pedidos")
+              .hasAnyRole("OPERADOR", "CONSULTA")
+            .requestMatchers(HttpMethod.GET, "/api/v1/pedidos/**")
               .hasAnyRole("OPERADOR", "CONSULTA")
             .requestMatchers(HttpMethod.GET, "/pedidos")
               .hasAnyRole("OPERADOR", "CONSULTA")
@@ -43,15 +52,14 @@ public class SecurityConfig {
   @Bean
   public UserDetailsService userDetailsService(
       PasswordEncoder encoder,
-      @Value("${demo.security.operador-password}")
-      String operadorPassword,
-      @Value("${demo.security.consulta-password}")
-      String consultaPassword) {
+      @Value("${demo.security.operador-password}") String operadorPassword,
+      @Value("${demo.security.consulta-password}") String consultaPassword) {
 
     UserDetails operador = User.withUsername("operador")
         .password(encoder.encode(operadorPassword))
         .roles("OPERADOR")
         .build();
+
     UserDetails consulta = User.withUsername("consulta")
         .password(encoder.encode(consultaPassword))
         .roles("CONSULTA")
@@ -59,5 +67,4 @@ public class SecurityConfig {
 
     return new InMemoryUserDetailsManager(operador, consulta);
   }
-
 }

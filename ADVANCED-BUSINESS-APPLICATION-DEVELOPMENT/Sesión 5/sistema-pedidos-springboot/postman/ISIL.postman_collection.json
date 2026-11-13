@@ -232,8 +232,151 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "PA3 - Búsqueda avanzada",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "consulta",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{consultaPassword}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/sistema-pedidos/api/v1/pedidos/busqueda-avanzada?cliente=Ana&totalMinimo=100",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "sistema-pedidos",
+                "api",
+                "v1",
+                "pedidos",
+                "busqueda-avanzada"
+              ],
+              "query": [
+                {
+                  "key": "cliente",
+                  "value": "Ana"
+                },
+                {
+                  "key": "totalMinimo",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PA3 - Clientes frecuentes",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "consulta",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{consultaPassword}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/sistema-pedidos/api/v1/pedidos/clientes-frecuentes?minPedidos=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "sistema-pedidos",
+                "api",
+                "v1",
+                "pedidos",
+                "clientes-frecuentes"
+              ],
+              "query": [
+                {
+                  "key": "minPedidos",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PA3 - Parámetro inválido minPedidos=0",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "consulta",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{consultaPassword}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/sistema-pedidos/api/v1/pedidos/clientes-frecuentes?minPedidos=0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "sistema-pedidos",
+                "api",
+                "v1",
+                "pedidos",
+                "clientes-frecuentes"
+              ],
+              "query": [
+                {
+                  "key": "minPedidos",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "consultaPassword",
+      "value": "ConsultaDemo2026!",
+      "type": "string"
     }
   ]
 }
