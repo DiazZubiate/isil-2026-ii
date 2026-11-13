@@ -9,6 +9,9 @@ import com.isil.edu.pe.spedidos.service.domain.ResumenPedidos;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
+/**
+ * Implementación del servicio de reporte de pedidos.
+ */
 @Service
 public class PedidoReporteServiceImpl implements PedidoReporteService {
 
@@ -48,6 +51,5 @@ public class PedidoReporteServiceImpl implements PedidoReporteService {
             )
         )
         .toList();
-
   }
 }

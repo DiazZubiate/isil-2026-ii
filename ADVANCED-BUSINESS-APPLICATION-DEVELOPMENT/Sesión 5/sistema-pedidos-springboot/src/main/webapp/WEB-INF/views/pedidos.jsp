@@ -153,6 +153,8 @@
                         <td colspan="8" class="sin-datos">Aún no hay pedidos.</td>
                     </tr>
                 </c:if>
+
+                <a href="/sistema-pedidos/reportes/pedidos" class="boton">Reporte pedidos</a>
                 </tbody>
             </table>
         </div>

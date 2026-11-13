@@ -14,6 +14,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Configuración de seguridad de la aplicación.
+ */
 @Configuration
 public class SecurityConfig {
 
@@ -27,6 +30,8 @@ public class SecurityConfig {
             .requestMatchers(HttpMethod.GET, "/api/v1/pedidos", "/api/v1/pedidos/**")
               .hasAnyRole("OPERADOR", "CONSULTA")
             .requestMatchers(HttpMethod.GET, "/pedidos")
+              .hasAnyRole("OPERADOR", "CONSULTA")
+            .requestMatchers(HttpMethod.GET, "/reportes/pedido", "/reportes/pedido/**")
               .hasAnyRole("OPERADOR", "CONSULTA")
             .anyRequest().authenticated()
         )
