@@ -9,10 +9,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
-import com.isil.edu.pe.spedidos.client.InventarioClient;
-import com.isil.edu.pe.spedidos.client.InventarioClientException;
-import com.isil.edu.pe.spedidos.client.InventarioNoDisponibleException;
-import com.isil.edu.pe.spedidos.client.dto.ReservaStockResponse;
+import com.isil.edu.pe.spedidos.client.inventario.InventarioClient;
+import com.isil.edu.pe.spedidos.client.inventario.InventarioClientException;
+import com.isil.edu.pe.spedidos.client.inventario.InventarioNoDisponibleException;
+import com.isil.edu.pe.spedidos.client.inventario.dto.ReservaStockResponse;
 import com.isil.edu.pe.spedidos.entity.Pedido;
 import com.isil.edu.pe.spedidos.exception.PedidoException;
 import com.isil.edu.pe.spedidos.repository.PedidoRepository;

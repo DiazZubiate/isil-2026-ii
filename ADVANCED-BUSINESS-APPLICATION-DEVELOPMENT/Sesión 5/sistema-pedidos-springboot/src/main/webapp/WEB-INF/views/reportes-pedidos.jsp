@@ -16,16 +16,19 @@
 <div class="contenedor">
     <header class="cabecera">
         <div>
-            <p class="eyebrow">Spring MVC + Spring JDBC</p>
+            <p class="eyebrow">Spring MVC + Spring REST</p>
             <h1>Reportes de pedidos</h1>
             <p class="subtitulo">
-                MVC → Service → Repository JDBC. La vista recibe objetos preparados por las capas anteriores.
+                MVC → PedidoReporteClient → pedidos-reportes-service. La vista ya no consulta reportes con JDBC local.
             </p>
         </div>
 
-        <div>
+        <div class="acciones-cabecera">
             <c:url var="pedidosUrl" value="/pedidos"/>
-            <p><a href="${pedidosUrl}">Volver a pedidos</a></p>
+            <a href="${pedidosUrl}" class="boton-link boton-link-secundario">
+                <span aria-hidden="true">←</span>
+                Volver a pedidos
+            </a>
 
             <c:url var="logoutUrl" value="/logout"/>
             <form method="post" action="${logoutUrl}">

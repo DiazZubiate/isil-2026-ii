@@ -1,6 +1,6 @@
 package com.isil.edu.pe.spedidos.service;
 
-import com.isil.edu.pe.spedidos.client.dto.ProductoInventarioResponse;
+import com.isil.edu.pe.spedidos.client.inventario.dto.ProductoInventarioResponse;
 import com.isil.edu.pe.spedidos.entity.Pedido;
 import com.isil.edu.pe.spedidos.exception.PedidoException;
 import com.isil.edu.pe.spedidos.service.impl.PedidoServiceImpl;

@@ -1,6 +1,6 @@
 package com.isil.edu.pe.spedidos.controller;
 
-import com.isil.edu.pe.spedidos.client.InventarioNoDisponibleException;
+import com.isil.edu.pe.spedidos.client.inventario.InventarioNoDisponibleException;
 import com.isil.edu.pe.spedidos.entity.Pedido;
 import com.isil.edu.pe.spedidos.exception.PedidoException;
 import com.isil.edu.pe.spedidos.service.PedidoService;

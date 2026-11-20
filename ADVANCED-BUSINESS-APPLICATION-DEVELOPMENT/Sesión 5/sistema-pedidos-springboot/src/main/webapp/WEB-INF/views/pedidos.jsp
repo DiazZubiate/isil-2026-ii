@@ -101,11 +101,19 @@
     </section>
 
     <section class="tarjeta">
-        <div class="titulo-tabla">
-            <h2>Pedidos registrados</h2>
-            <p>
-                Cada pedido conserva un snapshot del código, nombre y precio vigente al momento de la compra.
-            </p>
+        <div class="titulo-tabla titulo-tabla-acciones">
+            <div>
+                <h2>Pedidos registrados</h2>
+                <p>
+                    Cada pedido conserva un snapshot del código, nombre y precio vigente al momento de la compra.
+                </p>
+            </div>
+
+            <c:url var="reportePedidosUrl" value="/reportes/pedidos"/>
+            <a href="${reportePedidosUrl}" class="boton-link boton-link-primario">
+                <span aria-hidden="true">▦</span>
+                Ver reporte de pedidos
+            </a>
         </div>
 
         <div class="tabla-scroll">
@@ -154,7 +162,6 @@
                     </tr>
                 </c:if>
 
-                <a href="/sistema-pedidos/reportes/pedidos" class="boton">Reporte pedidos</a>
                 </tbody>
             </table>
         </div>
