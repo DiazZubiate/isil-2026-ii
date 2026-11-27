@@ -41,6 +41,9 @@ public class Pedido {
   @Column(nullable = false)
   private LocalDateTime fecha;
 
+  @Column(name = "revisado", nullable = false)
+  private Boolean revisado = false;
+
   public Pedido() {
   }
 
@@ -53,6 +56,7 @@ public class Pedido {
     this.cantidad = cantidad;
     this.total = total;
     this.fecha = LocalDateTime.now();
+    this.revisado = false;
   }
 
   public Pedido(Long id, String cliente, String productoCodigo, String productoNombre, BigDecimal precioUnitario,
@@ -65,6 +69,7 @@ public class Pedido {
     this.cantidad = cantidad;
     this.total = total;
     this.fecha = fecha;
+    this.revisado = false;
   }
 
   public Long getId() {
@@ -129,5 +134,13 @@ public class Pedido {
 
   public void setFecha(LocalDateTime fecha) {
     this.fecha = fecha;
+  }
+
+  public Boolean getRevisado() {
+    return revisado;
+  }
+
+  public void setRevisado(Boolean revisado) {
+    this.revisado = revisado;
   }
 }
